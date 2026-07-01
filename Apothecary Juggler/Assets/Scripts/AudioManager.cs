@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance {get; private set;}
     
-    [SerializeField, Tooltip("An array of all sounds in the entire.")]
+    [SerializeField, Tooltip("An array of all sounds in the entire game.")]
     private Sound[] sounds;
 
     private void Awake()
@@ -70,10 +70,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning($"Could not find {name} sound!");
             return; // Stop the function
         }
-        
         // Play the sound
         sound.audioSource.Stop();
     }
-
-
 }
