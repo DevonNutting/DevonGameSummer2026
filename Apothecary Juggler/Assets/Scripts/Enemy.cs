@@ -6,11 +6,13 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private Transform target; // Stores the target of this enemy
     [SerializeField] private NavMeshAgent agent; // Stores the NavMeshAgent component of the enemy
+    [SerializeField] private Animator animator;
 
     private void Awake()
     {
         // Initialize the agent variable
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -21,6 +23,11 @@ public class Enemy : MonoBehaviour
             // Follow the target
             agent.SetDestination(target.position);
         }
+
+        // A flag to determine if this enemy is currently moving or not
+        bool isRunning = agent.velocity.magnitude > 0.1f && agent.remainingDistance > agent.stoppingDistance;
+        // Set the running animation of the enemy based on its movement
+        animator.SetBool("IsRunning", isRunning);
     } 
 
     // This function is called when this enemy collides with another collider

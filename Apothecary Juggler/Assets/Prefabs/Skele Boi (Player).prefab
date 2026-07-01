@@ -1847,7 +1847,7 @@ GameObject:
   - component: {fileID: 3277498420938627388}
   - component: {fileID: 510238509982979038}
   m_Layer: 0
-  m_Name: Skele Boi
+  m_Name: Skele Boi (Player)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
