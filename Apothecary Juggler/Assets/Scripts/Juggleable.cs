@@ -5,6 +5,8 @@ public class Juggleable : MonoBehaviour
 {
     [SerializeField] private float juggleForce = 12f;
     [SerializeField] private float gravityScale = 0.5f;
+    [SerializeField, Tooltip("The number of collisions/bounces before this juggleable breaks")] 
+    private int integrity = 3; 
 
     private Rigidbody rb;
     
@@ -15,6 +17,29 @@ public class Juggleable : MonoBehaviour
         rb.AddForce(
             Physics.gravity * gravityScale,
             ForceMode.Acceleration);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {   
+        // Try to get the juggleable component off the colliding object
+        Juggleable juggleable = collision.transform.GetComponent<Juggleable>();
+
+        // If it was another juggleable object this hit...
+        if(juggleable != null)
+        {
+            // Decrement the integrity of this juggleable and its colliding one
+            Collision();
+            juggleable.Collision();
+            Debug.Log($"{gameObject.name} collided with {juggleable.name}");
+        }
+    }
+
+    private void Collision()
+    {
+        // Decrement the integrity
+        integrity -= 1;
+        // Destroy this object if its integrity reaches zero
+        if (integrity <= 0) Destroy(gameObject);
     }
 
     public void Juggle(Vector3 hitPoint)
@@ -34,7 +59,9 @@ public class Juggleable : MonoBehaviour
         // Give it an upward bias
         launchDirection = launchDirection.normalized + Vector3.up * 3f;
         launchDirection.Normalize();
-
+        // Apply the physics forces
         rb.AddForce(launchDirection * juggleForce, ForceMode.Impulse);
+        // Call the Collision logic
+        Collision();
     }
 }

@@ -132,8 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c1b4d1e10e748008753f6b77d524e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Juggleable
-  juggleForce: 5
+  juggleForce: 6
   gravityScale: 0.25
+  integrity: 3
 --- !u!136 &219797818032119387
 CapsuleCollider:
   m_ObjectHideFlags: 0
