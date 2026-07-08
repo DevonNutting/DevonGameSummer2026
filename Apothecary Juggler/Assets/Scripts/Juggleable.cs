@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Juggleable : MonoBehaviour
 {
     [SerializeField] private float juggleForce = 12f;
     [SerializeField] private float gravityScale = 0.5f;
+    [SerializeField] private int juggleValue = 10; // The points earned when juggling this object
+    [SerializeField] private int shatterValue = 50; // The poitns earned when this juggleable shatters
     [SerializeField, Tooltip("The number of collisions/bounces before this juggleable breaks")] 
     private int integrity = 3; 
 
@@ -34,12 +37,19 @@ public class Juggleable : MonoBehaviour
         }
     }
 
+    // Logic for when a juggles collides with another or is juggled by the player
     private void Collision()
     {
+        // Earn points for juggling
+        ScoreManager.Instance.EarnPoints(juggleValue);
         // Decrement the integrity
         integrity -= 1;
         // Destroy this object if its integrity reaches zero
-        if (integrity <= 0) Destroy(gameObject);
+        if (integrity <= 0)
+        {
+            Destroy(gameObject); // Destroy this juggleable
+            ScoreManager.Instance.EarnPoints(shatterValue); // Earn points for shattering the juggleable
+        }
     }
 
     public void Juggle(Vector3 hitPoint)
