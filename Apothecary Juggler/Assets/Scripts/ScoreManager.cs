@@ -29,5 +29,6 @@ public class ScoreManager : MonoBehaviour
     {
         score += pts;
         // Update the UI
+        UIManager.Instance.UpdateScore(score);
     }
 }

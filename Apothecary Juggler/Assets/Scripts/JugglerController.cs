@@ -54,10 +54,5 @@ public class JugglerController : MonoBehaviour
                 juggleable.Juggle(hit.point);
             }
         }
-
-#if UNITY_EDITOR
-        // Visualize the center line of the cast in the Scene view
-        Debug.DrawRay(ray.origin, ray.direction * 100f, Color.green, 1f);
-#endif
     }
 }

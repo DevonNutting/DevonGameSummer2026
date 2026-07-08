@@ -133,7 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Juggleable
   juggleForce: 5
-  gravityScale: 0.25
+  gravityScale: 0.1
+  juggleValue: 10
+  shatterValue: 50
   integrity: 3
 --- !u!136 &1602915134626576256
 CapsuleCollider:
