@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &374151818356740834
+--- !u!1 &8215011372933879042
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8204406447206829204}
-  - component: {fileID: 7567921882844514395}
-  - component: {fileID: 3814180899409158132}
-  - component: {fileID: 3936836293508338573}
-  - component: {fileID: 6189879022531092455}
-  - component: {fileID: 219797818032119387}
+  - component: {fileID: 8739874980050030520}
+  - component: {fileID: 5685124275367559197}
+  - component: {fileID: 7566444442151498967}
+  - component: {fileID: 3937249800993508619}
+  - component: {fileID: -2294782832416985538}
+  - component: {fileID: 1023728018532202975}
   m_Layer: 6
-  m_Name: Bottle_05
+  m_Name: _Juggleable3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8204406447206829204
+--- !u!4 &8739874980050030520
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374151818356740834}
+  m_GameObject: {fileID: 8215011372933879042}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7567921882844514395
+--- !u!33 &5685124275367559197
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374151818356740834}
-  m_Mesh: {fileID: 4300000, guid: 1f3ab9073fa6aed4bbec9d3a54b89a27, type: 3}
---- !u!23 &3814180899409158132
+  m_GameObject: {fileID: 8215011372933879042}
+  m_Mesh: {fileID: -5810529496076057460, guid: 9678ded376eeb754aae3c1851e75fce8, type: 3}
+--- !u!23 &7566444442151498967
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374151818356740834}
+  m_GameObject: {fileID: 8215011372933879042}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -69,7 +69,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 18f63ff904099034daf971dac5b32582, type: 2}
+  - {fileID: 2100000, guid: 917b70d93ff8f4eccbdab80dde611774, type: 2}
+  - {fileID: 3850466104811336786, guid: 9678ded376eeb754aae3c1851e75fce8, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,7 +82,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
+  m_StitchLightmapSeams: 1
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -93,13 +94,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &3936836293508338573
+--- !u!54 &3937249800993508619
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374151818356740834}
+  m_GameObject: {fileID: 8215011372933879042}
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
@@ -120,30 +121,30 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &6189879022531092455
+--- !u!114 &-2294782832416985538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374151818356740834}
+  m_GameObject: {fileID: 8215011372933879042}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53c1b4d1e10e748008753f6b77d524e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Juggleable
-  juggleForce: 6
-  gravityScale: 0.3
+  juggleForce: 12
+  gravityScale: 0.5
   juggleValue: 10
   shatterValue: 50
   integrity: 3
---- !u!136 &219797818032119387
+--- !u!136 &1023728018532202975
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374151818356740834}
+  m_GameObject: {fileID: 8215011372933879042}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -156,7 +157,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.07790866
-  m_Height: 0.2528369
+  m_Radius: 0.07983002
+  m_Height: 0.18986368
   m_Direction: 1
-  m_Center: {x: -0.00000000372529, y: 0.12641846, z: 0}
+  m_Center: {x: 0.007503461, y: 0.09493184, z: 0.000009987503}
