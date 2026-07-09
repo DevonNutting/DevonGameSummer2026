@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         // Check if the enemy has a target to follow
-        if (target != null)
+        if (target != null && GameManager.isGameOver == false)
         {
             // Follow the target
             agent.SetDestination(target.position);

@@ -35,6 +35,9 @@ public class JugglerController : MonoBehaviour
 
     private void OnJuggle(InputAction.CallbackContext context)
     {
+        // Do nothing if the game is already over
+        if (GameManager.isGameOver) return;
+
         // Read the current mouse position
         Vector2 mousePosition = Mouse.current.position.ReadValue();
 

@@ -13,7 +13,10 @@ public class PotionManager : MonoBehaviour
     }
 
     private void SpawnJuggleable()
-    {
+    {   
+        // Do nothing if the game is already over
+        if (GameManager.isGameOver) return;
+
         // Pick a random spawn point
         int randomSpawnIndex = Random.Range(0, spawnPoints.Length);
 

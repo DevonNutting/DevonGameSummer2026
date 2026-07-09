@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     // Stores the one (and only) instance of this script
     public static GameManager Instance {get; private set;}
+    [SerializeField] public static bool isGameOver = false; // A flag to determine if the game is over or not
 
     private void Awake()
     {
@@ -19,15 +21,31 @@ public class GameManager : MonoBehaviour
             // Destroy this extra copy of this script
             Destroy(gameObject);
         }
+
+        // Reset the game over flag
+        isGameOver = false;
     } 
 
     public void GameOver()
     {
-        // Trigger Lose state UI
-        // ...
+        if (isGameOver) return; // Do nothing if the game is already over 
 
-        // Load the scene at build index 0
+        // Set the game to be over
+        isGameOver = true;
+        // Trigger Game Over UI
+        UIManager.Instance.ToggleGameOverUI(true);
+    }
+
+    public void LoadMainMenu()
+    {
+        // Load the Main Menu Scene
         SceneManager.LoadScene(0);
+    }
+
+    public void LoadCurrentScene()
+    {
+        // Restarts the currently active scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

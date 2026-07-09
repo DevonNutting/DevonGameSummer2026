@@ -42,5 +42,11 @@ public class ScoreManager : MonoBehaviour
         lives -= amount;
         // Update the UI
         UIManager.Instance.UpdateLifeUI(lives);
+        // Check if all lives are gone
+        if (lives <= 0)
+        {
+            // The Gaame is over, trigger the Game Manager
+            GameManager.Instance.GameOver();
+        }
     }
 }

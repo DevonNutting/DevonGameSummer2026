@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     private List<GameObject> lifeIcons = new();
     [SerializeField] private GameObject lifeIconPrefab;
     [SerializeField] private Transform lifeIconParent;
+    [SerializeField] private GameObject gameOverPanel;
 
     // Awake() Called when this gameobject is enabled in the scene
     private void Awake()
@@ -26,6 +27,9 @@ public class UIManager : MonoBehaviour
             // Destroy any duplicates of this script
             Destroy(gameObject);
         }
+
+        // Toggle off the game over panel
+        ToggleGameOverUI(false);
     } 
 
     public void InitializeLives(int maxLives)
@@ -48,10 +52,16 @@ public class UIManager : MonoBehaviour
     }
 
     public void UpdateLifeUI(int lives)
-{
-    for (int i = 0; i < lifeIcons.Count; i++)
     {
-        lifeIcons[i].SetActive(i < lives);
+        for (int i = 0; i < lifeIcons.Count; i++)
+        {
+            lifeIcons[i].SetActive(i < lives);
+        }
     }
-}
+
+    // Toggles the UI on or off based on the boolean passed into it
+    public void ToggleGameOverUI(bool flag)
+    {
+        gameOverPanel.SetActive(flag);
+    }
 }
