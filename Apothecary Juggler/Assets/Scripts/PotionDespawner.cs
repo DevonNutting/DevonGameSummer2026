@@ -11,7 +11,7 @@ public class PotionDespawner : MonoBehaviour
             // Despawn the juggleable
             Destroy(other.gameObject);
             // Decrement player lives
-            Debug.Log($"We dropped {other.gameObject.name}!");
+            ScoreManager.Instance.LoseLife(1);
         }
     }
 }

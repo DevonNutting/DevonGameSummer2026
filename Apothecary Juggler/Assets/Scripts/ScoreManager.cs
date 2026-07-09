@@ -1,10 +1,12 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance {get; private set;}
-    [SerializeField] private int lives = 3;
+    [SerializeField] private int maxLives = 10;
+    [SerializeField] private int lives;
     [SerializeField] private int score = 0;
 
 
@@ -21,14 +23,24 @@ public class ScoreManager : MonoBehaviour
         }
 
         score = 0; // Reset the player score each play session
-        lives = 3; // Reset the playyer lives each play session
+        lives = maxLives; // Reset the playyer lives each play session
         // Update the UI
+        UIManager.Instance.InitializeLives(lives);
+        UIManager.Instance.UpdateScoreUI(score);
     }
 
     public void EarnPoints(int pts)
     {
         score += pts;
         // Update the UI
-        UIManager.Instance.UpdateScore(score);
+        UIManager.Instance.UpdateScoreUI(score);
+    }
+
+    public void LoseLife(int amount)
+    {
+        // Subtract amount from the remaining lives
+        lives -= amount;
+        // Update the UI
+        UIManager.Instance.UpdateLifeUI(lives);
     }
 }
