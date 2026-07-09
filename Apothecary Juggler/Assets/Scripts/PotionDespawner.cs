@@ -12,6 +12,8 @@ public class PotionDespawner : MonoBehaviour
             Destroy(other.gameObject);
             // Decrement player lives
             ScoreManager.Instance.LoseLife(1);
+            // Play Audio
+            AudioManager.Instance.PlaySound("Bottle-Shatter");
         }
     }
 }

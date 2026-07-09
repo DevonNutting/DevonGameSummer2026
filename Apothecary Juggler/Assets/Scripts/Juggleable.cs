@@ -40,6 +40,8 @@ public class Juggleable : MonoBehaviour
     // Logic for when a juggles collides with another or is juggled by the player
     private void Collision()
     {
+        // Play Audio
+        AudioManager.Instance.PlaySound("Bottle-Juggle");
         // Earn points for juggling
         ScoreManager.Instance.EarnPoints(juggleValue);
         // Decrement the integrity

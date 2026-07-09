@@ -6047,6 +6047,18 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     audioSource: {fileID: 0}
+  - name: Bottle-Shatter
+    audioClip: {fileID: 8300000, guid: 4dd1b71da8a35ea45b139ba3904fe2e8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Bottle-Juggle
+    audioClip: {fileID: 8300000, guid: 1a65e8fd87609442db95e8bf65375bd2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
 --- !u!4 &1738524689
 Transform:
   m_ObjectHideFlags: 0
