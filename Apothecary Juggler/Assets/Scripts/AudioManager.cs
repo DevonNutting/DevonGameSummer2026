@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
         // Loop through our array of sounds
         foreach (Sound s in sounds)
         {
+            // CHECK IF AN AUDIO SOURCE HAS ALREADY BEEN CREATED FIRST TO AVOID CREATING DUPLICATES
             // Add an audio source component for that sound
             s.audioSource = gameObject.AddComponent<AudioSource>();
             s.audioSource.clip = s.audioClip;

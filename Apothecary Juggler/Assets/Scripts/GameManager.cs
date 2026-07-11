@@ -38,12 +38,16 @@ public class GameManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        // Play UI Audio
+        AudioManager.Instance.PlaySound("UI-Confirm");
         // Load the Main Menu Scene
         SceneManager.LoadScene(0);
     }
 
     public void LoadCurrentScene()
     {
+        // Play UI Audio
+        AudioManager.Instance.PlaySound("UI-Confirm");
         // Restarts the currently active scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
