@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance {get; private set;}
 
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI highScoreText;
     private List<GameObject> lifeIcons = new();
     [SerializeField] private GameObject lifeIconPrefab;
     [SerializeField] private Transform lifeIconParent;
@@ -63,5 +64,10 @@ public class UIManager : MonoBehaviour
     public void ToggleGameOverUI(bool flag)
     {
         gameOverPanel.SetActive(flag);
+    }
+
+    public void UpdateHighScoreText(int score)
+    {   
+        highScoreText.text = $"High Score: {score}";
     }
 }

@@ -33,7 +33,7 @@ public class Juggleable : MonoBehaviour
             // Decrement the integrity of this juggleable and its colliding one
             Collision();
             juggleable.Collision();
-            Debug.Log($"{gameObject.name} collided with {juggleable.name}");
+            //Debug.Log($"{gameObject.name} collided with {juggleable.name}");
         }
     }
 

@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c1b4d1e10e748008753f6b77d524e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Juggleable
-  juggleForce: 12
+  juggleForce: 6
   gravityScale: 0.5
   juggleValue: 10
   shatterValue: 50

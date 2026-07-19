@@ -32,6 +32,6 @@ public class PotionManager : MonoBehaviour
             parentObject.transform
         );
 
-        Debug.Log($"Spawning {juggleable.name} at {spawnPosition}");
+        //Debug.Log($"Spawning {juggleable.name} at {spawnPosition}");
     }
 }

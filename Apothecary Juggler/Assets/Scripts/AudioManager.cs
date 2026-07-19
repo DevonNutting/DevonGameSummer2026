@@ -55,7 +55,7 @@ public class AudioManager : MonoBehaviour
             return; // Stop the function
         }
 
-        Debug.Log($"Playing {name} sound");
+        //Debug.Log($"Playing {name} sound");
         // Play the sound
         sound.audioSource.Play();
     }
