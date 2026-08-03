@@ -7,12 +7,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform target; // Stores the target of this enemy
     [SerializeField] private NavMeshAgent agent; // Stores the NavMeshAgent component of the enemy
     [SerializeField] private Animator animator;
+    [SerializeField] private HotPotato hotPotato;
 
     private void Awake()
     {
         // Initialize the agent variable
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        hotPotato = GetComponent<HotPotato>();
     }
 
     private void Update()
@@ -39,9 +41,18 @@ public class Enemy : MonoBehaviour
         // Check if the object his enemy collided is the player
         if (player != null) // If this enemy collided with the player
         {
-            // Take Damage
-            // Kill Player
             Debug.Log($"{gameObject.name} hit {collision.gameObject.name}!");
+            // Check if the enemy has the hot potato
+            if (hotPotato != null)
+            {
+                Debug.Log("Passing The Potato");
+                // Add the hotpotato to the player with the remaining time
+                HotPotato newPotato = player.gameObject.AddComponent<HotPotato>();
+                newPotato.Initialize(hotPotato.remainingTime);
+                // Remove the hotPotato from the enemy
+                Destroy(hotPotato);
+            }
+            
         }
     }
 }

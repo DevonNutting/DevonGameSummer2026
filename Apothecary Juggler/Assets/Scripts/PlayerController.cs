@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     // COMPONENTS
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private HotPotato hotPotato;
 
     // PLAYER SETTINGS
     [SerializeField] private float moveSpeed = 5f;
@@ -97,5 +98,28 @@ public class PlayerController : MonoBehaviour
         UnityEngine.Vector3.down, 
         groundCheckDistance,
         groundLayer);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Attempt to store the Playercontroller component from the collided object
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+
+        // Check if the object his enemy collided is the player
+        if (enemy != null) // If this enemy collided with the player
+        {
+            Debug.Log($"{gameObject.name} hit {collision.gameObject.name}!");
+            // Check if the enemy has the hot potato
+            if (hotPotato != null)
+            {
+                Debug.Log("Passing The Potato");
+                // Add the hotpotato to the player with the remaining time
+                HotPotato newPotato = enemy.gameObject.AddComponent<HotPotato>();
+                newPotato.Initialize(hotPotato.remainingTime);
+                // Remove the hotPotato from the enemy
+                Destroy(hotPotato);
+            }
+            
+        }
     }
 }
